@@ -30,9 +30,7 @@ var MONGODB_URI = process.env.MONGODB_URI || ("mongodb://heroku_knmg5qnt:Aeris11
 // Set mongoose to leverage built in JavaScript ES6 Promises
 // Connect to the Mongo DB
 mongoose.Promise = Promise;
-mongoose.connect(MONGODB_URI, {
-  useMongoClient: true
-});
+mongoose.connect(MONGODB_URI)
 
 app.get("/scrape", function(req, res){
 	axios.get("https://www.ccn.com/").then(function(response){
