@@ -33,7 +33,7 @@ mongoose.Promise = Promise;
 mongoose.connect(MONGODB_URI)
 
 app.get("/scrape", function(req, res){
-	axios.get("https://www.ccn.com/").then(function(response){
+	axios.get("https://www.reddit.com/r/nfl/").then(function(response){
 		var $ = cheerio.load(response.data);
 
 		$("article h4").each(function(i, element){
