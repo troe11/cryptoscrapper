@@ -31,7 +31,7 @@ var MONGODB_URI = process.env.MONGODB_URI || "mongodb://heroku_knmg5qnt:Aeris116
 // Connect to the Mongo DB
 mongoose.Promise = Promise;
 mongoose.connect(MONGODB_URI, {
-  
+  useMongoClient: true
 });
 
 app.get("/scrape", function(req, res){
