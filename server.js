@@ -35,22 +35,22 @@ mongoose.connect(MONGODB_URI)
 app.get("/scrape", function(req, res){
 	axios.get("https://www.reddit.com/r/nfl/").then(function(response){
 		var $ = cheerio.load(response.data);
+		console.log($)
+		// $("article h4").each(function(i, element){
+		// 	var result = {};
 
-		$("article h4").each(function(i, element){
-			var result = {};
+		// 	result.title = $(this).children("a").text();
+		// 	result.link = $(this).children("a").attr("href");
 
-			result.title = $(this).children("a").text();
-			result.link = $(this).children("a").attr("href");
-
-			db.Article.create(result)
-			.then(function(dbArticle){
-				console.log(dbArticle);
-			})
-			.catch(function(err){
-				return res.json(err)
-			});
-		});
-		res.send("Scrape complete")
+		// 	db.Article.create(result)
+		// 	.then(function(dbArticle){
+		// 		console.log(dbArticle);
+		// 	})
+		// 	.catch(function(err){
+		// 		return res.json(err)
+		// 	});
+		// });
+		// res.send("Scrape complete")
 	});
 });
 
