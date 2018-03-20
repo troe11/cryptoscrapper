@@ -32,7 +32,7 @@ var MONGODB_URI = process.env.MONGODB_URI || ("mongodb://heroku_knmg5qnt:Aeris11
 mongoose.Promise = Promise;
 mongoose.connect(MONGODB_URI)
 
-app.get("/scrape", function(req, res){
+app.get("/", function(req, res){
 	axios.get("https://www.reddit.com/r/nfl/").then(function(response){
 		var $ = cheerio.load(response.data);
 		console.log($)
