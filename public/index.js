@@ -1,4 +1,4 @@
-$.getJSON("/", function(data) {
+$.getJSON("/articles", function(data) {
     // For each one
     for (var i = 0; i < data.length; i++) {
       // Display the apropos information on the page
@@ -24,5 +24,4 @@ $.getJSON("/", function(data) {
     })
     location.reload();
   })
-  res.send(JSON)
 })
