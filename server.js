@@ -11,7 +11,7 @@ var app = express();
 
 var db = require("./models");
 
-var PORT = 3000;
+var port = 3000;
 
 app.use(logger("dev"));
 
@@ -51,7 +51,7 @@ app.get("/scrape", function(req, res){
 	});
 });
 
-app.get("/articles", function(req,res){
+app.get("/", function(req,res){
 	db.Article.find({})
 	.then(function(result){
 		res.json(result);
@@ -74,7 +74,7 @@ app.post("/articles/:id", function(req,res){
 })
 
 app.listen(PORT, function() {
-	console.log("App running on port " + PORT + "!");
+	console.log("App running on port " + port + "!");
   });
   
 
