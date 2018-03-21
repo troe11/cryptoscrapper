@@ -24,4 +24,5 @@ $.getJSON("/", function(data) {
     })
     location.reload();
   })
+  res.send(JSON)
 })
