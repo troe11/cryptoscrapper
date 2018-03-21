@@ -11,7 +11,7 @@ var app = express();
 
 var db = require("./models");
 
-var port = 3000;
+var PORT = 3000;
 
 app.use(logger("dev"));
 
@@ -74,7 +74,7 @@ app.post("/articles/:id", function(req,res){
 })
 
 app.listen(PORT, function() {
-	console.log("App running on port " + port + "!");
+	console.log("App running on port " + PORT + "!");
   });
   
 
